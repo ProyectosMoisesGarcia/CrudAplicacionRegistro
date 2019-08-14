@@ -1,0 +1,42 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <h5 style="text-align: center;">Formulario de Registro</h5>
+                    <input type="text" name="nombre" [(ngModel)]="registro.nombre" placeholder="Nombre" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                        <input type="text" name="apellidopat" [(ngModel)]="registro.apellidopat" placeholder="Apellido Parterno" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                        <input type="text" name="apellidomat" [(ngModel)]="registro.apellidomat" placeholder="Apellido Materno" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                        <input type="text" name="email" [(ngModel)]="registro.email" placeholder="Email" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                        <input type="text" name="fchnac" [(ngModel)]="registro.fchnac" placeholder="Fecha Inicio" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                        <input type="text" name="fchingreso" [(ngModel)]="registro.fchingreso" placeholder="Fecha Terminada" class="form-control" autofocus required>
+                </div>
+                <button class="btn btn-success btn-block" (click)="edit ? actualizarRegistro() : crearRegistro()">
+                    Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h3>{{registro.id}}. {{registro.nombre}}</h3>
+        <p> {{registro.apellidopat}}</p>
+        <p> {{registro.apellidomat}}</p>
+        <p> {{registro.email}}</p>
+        <p> {{registro.fchnac}}</p>
+        <p> {{registro.fchingreso}}</p>
+        <p> {{registro.create_at | date: 'yyyy-MM-dd'}}</p>
+    </div>
+</div>

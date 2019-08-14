@@ -1,0 +1,28 @@
+<h4>Lista de usuarios</h4>
+<table class="table">
+        <thead>
+        <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Ape.. - P</th>
+        <th scope="col">Ape.. - M</th>
+        <th scope="col">Email</th>
+        <th scope="col">Fecha - I</th>
+        <th scope="col">Fecha - F</th>
+        <th scope="col">Acciones</th>
+        </tr>
+        </thead>    
+    <tbody *ngFor="let registro of registro">
+      <tr>
+        <td>{{registro.nombre}}</td>
+        <td>{{registro.apellidopat}}</td>
+        <td>{{registro.apellidomat}}</td>
+        <td>{{registro.email}}</td>
+        <td>{{registro.fchnac}}</td>
+        <td>{{registro.fchingreso}}
+        <td><a [routerLink]="['/registro/edit', registro.id]" class="btn btn-info btn-block" ><i class="fas fa-user"></i></a> </td>
+        <td><button class="btn btn-danger" (click)="deleteRegistro(registro.id)">
+                <i class="far fa-trash-alt"></i>
+            </button></td>
+      </tr>
+    </tbody>
+  </table>
